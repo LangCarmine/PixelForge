@@ -390,4 +390,166 @@
         <button class="faq-q">¿TRABAJÁIS CON CLIENTES INTERNACIONALES? <span class="plus">+</span></button>
         <div class="faq-a"><div class="faq-a-inner">Sí. Trabajamos 100% en remoto con clientes de Europa y América. Comunicación en inglés y español.</div></div>
       </div>
-      <div class="faq-item tp-in" style="transition-delay:.2s
+      <div class="faq-item tp-in" style="transition-delay:.2s">
+        <button class="faq-q">¿QUÉ TECNOLOGÍAS USÁIS? <span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Frontend: React, Svelte, Three.js. Backend: Node, Python. 3D: Blender, Unreal, Godot. Shaders: GLSL / HLSL.</div></div>
+      </div>
+      <div class="faq-item tp-in" style="transition-delay:.3s">
+        <button class="faq-q">¿OFRECÉIS MANTENIMIENTO? <span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sí. Todos los packs incluyen soporte mínimo. Para mantenimiento continuo ofrecemos retainer mensual.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIVISOR 09 ═══ -->
+<div class="level-divider"><div class="divider-line"></div><div class="divider-label"><span class="diamond"></span><span class="num">09</span> BLOG <span class="diamond"></span></div></div>
+
+<!-- ═══ BLOG ═══ -->
+<section class="module module-blog" id="blog">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number">09</div>
+      <div class="mod-titles"><span class="mod-tag">// NOTAS TÉCNICAS</span><h2 class="mod-title">DESDE LA <span class="hl">CONSOLA</span></h2></div>
+    </div>
+    <div class="blog-grid">
+      <div class="post tp-in">
+        <span class="post-tag">WEBGL</span>
+        <h3 class="post-title">Optimizar shaders para móvil sin morir en el intento</h3>
+        <p class="post-excerpt">Técnicas de precisión media, branchless y reducción de uniforms para correr a 60fps.</p>
+        <div class="post-meta"><span>2024.11.20</span><span>5 MIN</span></div>
+      </div>
+      <div class="post tp-in" style="transition-delay:.1s">
+        <span class="post-tag">3D</span>
+        <h3 class="post-title">Pipeline Blender → Three.js sin perder la cabeza</h3>
+        <p class="post-excerpt">Exportación de GLB, optimización de polígonos y materiales que se ven bien en cualquier motor.</p>
+        <div class="post-meta"><span>2024.10.08</span><span>7 MIN</span></div>
+      </div>
+      <div class="post tp-in" style="transition-delay:.2s">
+        <span class="post-tag">DISEÑO</span>
+        <h3 class="post-title">Diseño UI retro sin caer en el cliché</h3>
+        <p class="post-excerpt">Cómo usar pixel art en interfaces modernas sin que parezca una web de los 90 mal hecha.</p>
+        <div class="post-meta"><span>2024.09.15</span><span>6 MIN</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIVISOR 10 ═══ -->
+<div class="level-divider"><div class="divider-line"></div><div class="divider-label"><span class="diamond"></span><span class="num">10</span> NEWSLETTER <span class="diamond"></span></div></div>
+
+<!-- ═══ NEWSLETTER ═══ -->
+<section class="module module-newsletter" id="newsletter">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number">10</div>
+      <div class="mod-titles"><span class="mod-tag">// INSERT DISK</span><h2 class="mod-title">SUSCRÍBETE A LA <span class="hl">CONSOLA</span></h2></div>
+    </div>
+    <div class="newsletter-wrap tp-in">
+      <h3 class="newsletter-title">PIXELFORGE DISPATCH</h3>
+      <p class="newsletter-desc">Notas técnicas, recursos y casos de estudio. Un email al mes, sin spam.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" class="newsletter-input" id="newsletterEmail" placeholder="tu@email.com" required inputmode="email" autocomplete="email">
+        <button type="submit" class="newsletter-btn" id="newsletterBtn">SUSCRIBIR</button>
+      </form>
+      <div class="newsletter-msg" id="newsletterMsg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIVISOR 11 ═══ -->
+<div class="level-divider"><div class="divider-line"></div><div class="divider-label"><span class="diamond"></span><span class="num">11</span> CONTACTO <span class="diamond"></span></div></div>
+
+<!-- ═══ CONTACTO ═══ -->
+<section class="module module-contact" id="contact">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number">11</div>
+      <div class="mod-titles"><span class="mod-tag">// NUEVA PARTIDA</span><h2 class="mod-title">ENVÍA TU <span class="hl">BRIEFING</span></h2></div>
+    </div>
+
+    <div class="form-wrap tp-in">
+      <span class="form-corner-tr"></span><span class="form-corner-bl"></span>
+      <div class="form-bar">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <span class="path">pixelforge:~$</span>
+        <span>./nuevo_proyecto.sh</span>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <div class="terminal-field">
+          <label><span class="prompt">&gt;</span> NOMBRE <span class="req">[req]</span></label>
+          <span class="caret">&gt;</span><span class="check">✔</span>
+          <input type="text" name="nombre" class="terminal-input" placeholder="player_one" required>
+          <span class="field-error" data-for="nombre"></span>
+        </div>
+        <div class="terminal-field">
+          <label><span class="prompt">&gt;</span> EMAIL <span class="req">[req]</span></label>
+          <span class="caret">&gt;</span><span class="check">✔</span>
+          <input type="email" name="email" class="terminal-input" placeholder="tu@email.com" inputmode="email" autocomplete="email" required>
+          <span class="field-error" data-for="email"></span>
+        </div>
+        <div class="terminal-field">
+          <label><span class="prompt">&gt;</span> TIPO DE PROYECTO</label>
+          <div class="arcade-select">
+            <input type="radio" id="s1" name="servicio" value="programacion" checked><label for="s1">PROGRAMACIÓN</label>
+            <input type="radio" id="s2" name="servicio" value="3d"><label for="s2">3D</label>
+            <input type="radio" id="s3" name="servicio" value="webgl"><label for="s3">WEBGL</label>
+            <input type="radio" id="s4" name="servicio" value="pixel"><label for="s4">PIXEL ART</label>
+          </div>
+        </div>
+        <div class="terminal-field textarea-field">
+          <label><span class="prompt">&gt;</span> MENSAJE <span class="req">[req]</span></label>
+          <span class="caret">&gt;</span><span class="check">✔</span>
+          <textarea name="mensaje" class="terminal-textarea" placeholder="describe tu idea, plazos, referencias..." required></textarea>
+          <span class="field-error" data-for="mensaje"></span>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span class="coin"></span><span class="btn-text">INSERT COIN · ENVIAR</span>
+        </button>
+        <div class="form-message" id="formMessage"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-mark">◆ PIXELFORGE © 2025 ◆</div>
+  <span class="coin"></span> INSERT COIN TO CONTINUE <span class="coin"></span>
+  <div class="qr-wrap">
+    <div class="qr-box">
+      <img src="img/qr.svg" alt="QR para agendar llamada" class="qr-svg">
+    </div>
+    <div class="qr-label">▸ Escanea para agendar una llamada de 15 min.</div>
+  </div>
+  <div class="footer-links">
+    <a href="#services">SERVICIOS</a><a href="#projects">PROYECTOS</a>
+    <a href="#team">EQUIPO</a><a href="#blog">BLOG</a><a href="#contact">CONTACTO</a>
+  </div>
+</footer>
+
+<!-- ═══ EASTER EGG ═══ -->
+<div class="easter-egg" id="easterEgg">
+  <div class="egg-content">
+    <div class="egg-title">★ KONAMI UNLOCKED ★</div>
+    <div class="egg-msg">Has desbloqueado el modo secreto.<br>Bienvenido al club de los que escriben ↑↑↓↓←→←→BA.</div>
+    <button class="egg-close" id="eggClose">CERRAR</button>
+  </div>
+</div>
+
+<!-- ═══ SCRIPTS ═══ -->
+<script src="js/state.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/achievements.js"></script>
+<script src="js/preloader.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/ui-toggles.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/form.js"></script>
+<script src="js/newsletter.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/konami.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
