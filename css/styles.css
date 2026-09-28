@@ -1,0 +1,34 @@
+/* ═══════════════════════════════════════════════════════════
+   PIXELFORGE — Estilos principales
+   ═══════════════════════════════════════════════════════════ */
+
+:root,
+body[data-theme="orange"]{
+  --void:#0a0505; --deep:#160a05;
+  --accent:#f97316; --accent-deep:#ea580c; --accent-soft:#fdba74; --accent-2:#fbbf24;
+  --cream:#fff7ed; --paper:#ffffff; --ink:#1a0f08; --ink-soft:#3a251a;
+  --bg-pattern:rgba(249,115,22,.08); --bg-pattern-2:rgba(249,115,22,.3); --crt-glow:rgba(249,115,22,.15);
+}
+body[data-theme="cyan"]{
+  --void:#02030a; --deep:#0a1024;
+  --accent:#22d3ee; --accent-deep:#0ea5e9; --accent-soft:#67e8f9; --accent-2:#f0abfc;
+  --cream:#e2e8f0; --paper:#f4f7fb; --ink:#0a0e1f; --ink-soft:#334155;
+  --bg-pattern:rgba(34,211,238,.08); --bg-pattern-2:rgba(34,211,238,.3); --crt-glow:rgba(34,211,238,.15);
+}
+body[data-theme="gameboy"]{
+  --void:#0f1a0b; --deep:#1a2a15;
+  --accent:#9bbc0f; --accent-deep:#8bac0f; --accent-soft:#c4d68c; --accent-2:#306230;
+  --cream:#d4e4b8; --paper:#e8f0d4; --ink:#0f380f; --ink-soft:#306230;
+  --bg-pattern:rgba(155,188,15,.08); --bg-pattern-2:rgba(155,188,15,.3); --crt-glow:rgba(155,188,15,.15);
+}
+body[data-theme="day"]{
+  --void:#f5f0e8; --deep:#e8dfd0;
+  --accent:#ea580c; --accent-deep:#c2410c; --accent-soft:#fb923c; --accent-2:#a16207;
+  --cream:#1a0f08; --paper:#ffffff; --ink:#1a0f08; --ink-soft:#4a3a2a;
+  --bg-pattern:rgba(194,65,12,.08); --bg-pattern-2:rgba(194,65,12,.3); --crt-glow:rgba(234,88,12,.15);
+}
+
+/* ... RESTO DEL CSS (copiar todo el bloque <style> de la respuesta anterior) ... */
+
+/* Al final, referencias a imágenes externas: */
+/* Ejemplo: qr.svg ahora vive en img/qr.svg */
