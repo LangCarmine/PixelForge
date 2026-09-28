@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIXELFORGE ▓ Estudio Digital · Programación · 3D · Pixel Art</title>
+
+<meta name="description" content="Estudio digital independiente especializado en programación, modelado 3D, WebGL y pixel art.">
+<meta name="theme-color" content="#f97316">
+<meta property="og:title" content="PIXELFORGE · Estudio Digital">
+<meta property="og:description" content="Programación · Modelado 3D · WebGL · Pixel Art">
+<meta property="og:type" content="website">
+
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="manifest" href="manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="orange">
+
+<!-- ═══ PRELOADER ═══ -->
+<div id="preloader">
+  <div class="pre-title">PIXELFORGE</div>
+  <div class="pre-cartridge"><div class="pre-label">INSERT<br>CART</div></div>
+  <div class="pre-bar-wrap"><div class="pre-bar" id="preBar"></div></div>
+  <div class="pre-status" id="preStatus">> BOOTING SYSTEM...</div>
+  <div class="pre-hint">PRESS ANY KEY TO SKIP</div>
+</div>
+
+<!-- ═══ THEME GLITCH ═══ -->
+<div class="theme-glitch" id="themeGlitch"></div>
+
+<!-- ═══ PROGRESO ═══ -->
+<div class="progress-strip"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- ═══ HUD ═══ -->
+<div class="hud">
+  <div class="hud-left"><span class="blink">●</span><span>PRESS_START</span></div>
+  <div class="hud-center">
+    <a href="#hero" class="lvl-btn active">01</a>
+    <a href="#services" class="lvl-btn">02</a>
+    <a href="#showreel" class="lvl-btn">03</a>
+    <a href="#projects" class="lvl-btn">04</a>
+    <a href="#team" class="lvl-btn">05</a>
+    <a href="#pricing" class="lvl-btn">06</a>
+    <a href="#contact" class="lvl-btn">07</a>
+  </div>
+  <div class="hud-right">
+    <button class="hud-btn" id="achBtn" title="Logros">🏆<span class="ach-badge" id="achBadge">0</span></button>
+    <button class="hud-btn" id="speedBtn" title="Speedrun 3x">⏩</button>
+    <button class="hud-btn" id="soundBtn" title="Sonido (M)">♪</button>
+    <button class="hud-btn" id="themeBtn" title="Tema">◐</button>
+    <button class="hud-btn" id="crtBtn" title="CRT">▣</button>
+  </div>
+</div>
+
+<!-- ═══ INDICADOR NIVEL ═══ -->
+<div class="level-indicator">LVL <span class="num" id="lvlNum">1/7</span></div>
+
+<!-- ═══ TOASTS ═══ -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ═══ ACHIEVEMENT POPUP ═══ -->
+<div class="achievement-popup" id="achPopup">
+  <div class="ach-trophy">🏆</div>
+  <div class="ach-label">// LOGRO DESBLOQUEADO</div>
+  <div class="ach-name" id="achName">EXPLORADOR</div>
+  <div class="ach-desc" id="achDesc">Has visitado todas las secciones</div>
+</div>
+
+<!-- ═══ PANEL DE LOGROS ═══ -->
+<div class="achievements-panel" id="achPanel">
+  <div class="ach-modal">
+    <div class="ach-modal-header">
+      <div>
+        <div class="ach-modal-title">🏆 LOGROS DEL JUGADOR</div>
+        <div class="ach-modal-sub">
+          Progreso: <strong id="achCount">0 / 0</strong> · Sigue explorando para desbloquear más
+        </div>
+      </div>
+      <button class="ach-close" id="achClose" title="Cerrar">✕</button>
+    </div>
+    <div class="ach-progress-bar"><div class="ach-progress-fill" id="achProgressFill"></div></div>
+    <div class="ach-grid" id="achGrid"></div>
+    <div class="ach-footer" id="achFooter">▸ Completa todos los logros para desbloquear el secreto final</div>
+  </div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="arcade-badge"><span class="dot"></span>NEW GAME · PIXELFORGE STUDIO</div>
+  <h1 class="tp-in">
+    <span class="row">CÓDIGO</span>
+    <span class="row word-2" data-text="·3D·">·3D·</span>
+    <span class="row word-3">PIXELES</span>
+  </h1>
+  <div class="cartridge-wrap">
+    <a href="#services" class="cartridge tp-in" style="transition-delay:.2s">
+      <span class="slot"></span>
+      <span class="label">INSERT COIN <span class="arrow-css"></span></span>
+    </a>
+    <a href="#contact" class="cartridge secondary tp-in" style="transition-delay:.35s">
+      <span class="slot"></span>
+      <span class="label">CONTACTO <span class="arrow-css"></span></span>
+    </a>
+  </div>
+  <div class="scroll-hint"><span class="arrow">▼</span> SCROLL PARA CONTINUAR</div>
+</section>
+
+<!-- ═══ DIVISOR 01 ═══ -->
+<div class="level-divider"><div class="divider-line"></div><div class="divider-label"><span class="diamond"></span><span class="num">01</span> SERVICIOS <span class="diamond"></span></div></div>
+
+<!-- ═══ SERVICIOS ═══ -->
+<section class="module module-services" id="services">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number">01</div>
+      <div class="mod-titles">
+        <span class="mod-tag">// QUÉ HACEMOS</span>
+        <h2 class="mod-title">MÓDULOS DE <span class="hl">PRODUCCIÓN</span></h2>
+      </div>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row tp-in"><span class="svc-num">01</span><span class="svc-name">PROGRAMACIÓN</span><span class="svc-desc">Web · apps · sistemas a medida. Arquitecturas limpias.</span><span class="svc-icon">◈</span></div>
+      <div class="svc-row tp-in" style="transition-delay:.1s"><span class="svc-num">02</span><span class="svc-name">MODELADO 3D</span><span class="svc-desc">Assets · personajes · entornos para juegos y VR.</span><span class="svc-icon">▲</span></div>
+      <div class="svc-row tp-in" style="transition-delay:.2s"><span class="svc-num">03</span><span class="svc-name">WEBGL/SHADERS</span><span class="svc-desc">Experiencias interactivas en tiempo real.</span><span class="svc-icon">✦</span></div>
+      <div class="svc-row tp-in" style="transition-delay:.3s"><span class="svc-num">04</span><span class="svc-name">DISEÑO PIXEL</span><span class="svc-desc">Identidad retro-futurista con sello propio.</span><span class="svc-icon">▣</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIVISOR 02 ═══ -->
+<div class="level-divider"><div class="divider-line"></div><div class="divider-label"><span class="diamond"></span><span class="num">02</span> SHOWREEL <span class="diamond"></span></div></div>
+
+<!-- ═══ SHOWREEL ═══ -->
+<section class="module module-showreel" id="showreel">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number">02</div>
+      <div class="mod-titles"><span class="mod-tag">// REEL 2025</span><h2 class="mod-title">NUESTRO <span class="hl">TRABAJO EN 60s</span></h2></div>
+    </div>
+    <div class="showreel-wrap tp-in">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1" title="PixelForge Showreel 2025" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="showreel-caption tp-in" style="transition-delay:.2s">▶ DEMO REEL · 2025 · <span class="blink">REPRODUCIENDO</span></p>
+  </div>
+</section>
+
+<!-- ═══ DIVISOR 03 ═══ -->
+<div class="level-divider"><div class="divider-line"></div><div class="divider-label"><span class="diamond"></span><span class="num">03</span> PROYECTOS <span class="diamond"></span></div></div>
+
+<!-- ═══ PROYECTOS ═══ -->
+<section class="module module-projects" id="projects">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number">03</div>
+      <div class="mod-titles"><span class="mod-tag">// PORTAFOLIO DE DISCOS</span><h2 class="mod-title">MUNDOS <span class="hl">RENDERIZADOS</span></h2></div>
+    </div>
+    <div class="proj-wall">
+      <div class="disc drop-in"><span class="scan"></span><div class="disc-id">DISC_001</div><div class="disc-title">NEBULA<br>RUNNER</div><div class="disc-meta"><span>WEBGL</span><span>2024</span></div></div>
+      <div class="disc drop-in" style="transition-delay:.1s"><span class="scan"></span><div class="disc-id">DISC_002</div><div class="disc-title">CYBERCITY<br>2099</div><div class="disc-meta"><span>UNREAL</span><span>2024</span></div></div>
+      <div class="disc drop-in" style="transition-delay:.2s"><span class="scan"></span><div class="disc-id">DISC_003</div><div class="disc-title">PIXEL<br>DUNGEON</div><div class="disc-meta"><span>BLENDER</span><span>2023</span></div></div>
+      <div class="disc drop-in" style="transition-delay:.3s"><span class="scan"></span><div class="disc-id">DISC_004</div><div class="disc-title">MECH<br>ARENA</div><div class="disc-meta"><span>THREE.JS</span><span>2023</span></div></div>
+      <div class="disc drop-in" style="transition-delay:.4s"><span class="scan"></span><div class="disc-id">DISC_005</div><div class="disc-title">VOXEL<br>WORLD</div><div class="disc-meta"><span>GODOT</span><span>2023</span></div></div>
+      <div class="disc drop-in" style="transition-delay:.5s"><span class="scan"></span><div class="disc-id">DISC_006</div><div class="disc-title">RETRO<br>RACER</div><div class="disc-meta"><span>SHADERS</span><span>2022</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WALL OF FAME ═══ -->
+<section class="module module-fame" id="fame">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number" style="font-size:1.6rem">★</div>
+      <div class="mod-titles"><span class="mod-tag">// WALL OF FAME</span><h2 class="mod-title">CLIENTES QUE <span class="hl">CONFIARON</span></h2></div>
+    </div>
+    <div class="fame-grid">
+      <div class="fame-cart tp-in"><div class="fame-logo">NX</div><div class="fame-name">NEXUS LABS</div></div>
+      <div class="fame-cart tp-in" style="transition-delay:.1s"><div class="fame-logo">VO</div><div class="fame-name">VOLTAGE</div></div>
+      <div class="fame-cart tp-in" style="transition-delay:.2s"><div class="fame-logo">AR</div><div class="fame-name">ARCADE CO</div></div>
+      <div class="fame-cart tp-in" style="transition-delay:.3s"><div class="fame-logo">PX</div><div class="fame-name">PIXELWORKS</div></div>
+      <div class="fame-cart tp-in" style="transition-delay:.4s"><div class="fame-logo">BY</div><div class="fame-name">BYTE STUDIO</div></div>
+      <div class="fame-cart tp-in" style="transition-delay:.5s"><div class="fame-logo">RB</div><div class="fame-name">RETROBIT</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCOREBOARD ═══ -->
+<section class="scoreboard">
+  <div class="scoreboard-inner">
+    <div class="score glitch-in"><span class="score-val" data-target="128">0</span><span class="score-lbl">PROYECTOS</span></div>
+    <div class="score glitch-in" style="animation-delay:.15s"><span class="score-val" data-target="42">0</span><span class="score-lbl">CLIENTES</span></div>
+    <div class="score glitch-in" style="animation-delay:.3s"><span class="score-val" data-target="8">0</span><span class="score-lbl">AÑOS</span></div>
+    <div class="score glitch-in" style="animation-delay:.45s"><span class="score-val" data-target="99">0</span><span class="score-lbl">% ÉXITO</span></div>
+  </div>
+</section>
+
+<!-- ═══ DIVISOR 04 ═══ -->
+<div class="level-divider"><div class="divider-line"></div><div class="divider-label"><span class="diamond"></span><span class="num">04</span> EQUIPO <span class="diamond"></span></div></div>
+
+<!-- ═══ EQUIPO ═══ -->
+<section class="module module-team" id="team">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number">04</div>
+      <div class="mod-titles"><span class="mod-tag">// CHARACTER SELECT</span><h2 class="mod-title">EL <span class="hl">EQUIPO</span></h2></div>
+    </div>
+    <div class="team-grid">
+      <div class="member tp-in">
+        <div class="avatar a1">
+          <span></span><span></span><span class="hair"></span><span class="hair"></span><span class="hair"></span><span class="hair"></span><span></span><span></span>
+          <span></span><span class="hair"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="hair"></span><span></span>
+          <span></span><span class="skin"></span><span class="eye"></span><span class="skin"></span><span class="skin"></span><span class="eye"></span><span class="skin"></span><span></span>
+          <span></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span></span>
+          <span></span><span></span><span class="hair"></span><span class="skin"></span><span class="skin"></span><span class="hair"></span><span></span><span></span>
+          <span></span><span></span><span></span><span class="hair"></span><span class="hair"></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="member-name">ALEX</div><div class="member-role">LEAD DEV</div>
+        <div class="member-stats"><span class="stat-chip">ATK 95</span><span class="stat-chip">DEF 80</span></div>
+      </div>
+      <div class="member tp-in" style="transition-delay:.1s">
+        <div class="avatar a2">
+          <span></span><span></span><span></span><span class="hair"></span><span class="hair"></span><span></span><span></span><span></span>
+          <span></span><span></span><span class="hair"></span><span class="hair"></span><span class="hair"></span><span class="hair"></span><span></span><span></span>
+          <span></span><span class="hair"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="hair"></span><span></span>
+          <span></span><span class="skin"></span><span class="eye"></span><span class="skin"></span><span class="skin"></span><span class="eye"></span><span class="skin"></span><span></span>
+          <span></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span></span>
+          <span></span><span></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="member-name">KAI</div><div class="member-role">3D ARTIST</div>
+        <div class="member-stats"><span class="stat-chip">ATK 88</span><span class="stat-chip">DEF 92</span></div>
+      </div>
+      <div class="member tp-in" style="transition-delay:.2s">
+        <div class="avatar a3">
+          <span></span><span></span><span class="hair"></span><span class="hair"></span><span class="hair"></span><span class="hair"></span><span></span><span></span>
+          <span></span><span class="hair"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="hair"></span><span></span>
+          <span></span><span class="hair"></span><span class="eye"></span><span class="skin"></span><span class="skin"></span><span class="eye"></span><span class="hair"></span><span></span>
+          <span></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span></span>
+          <span></span><span></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="member-name">NOVA</div><div class="member-role">PIXEL ARTIST</div>
+        <div class="member-stats"><span class="stat-chip">ATK 92</span><span class="stat-chip">DEF 75</span></div>
+      </div>
+      <div class="member tp-in" style="transition-delay:.3s">
+        <div class="avatar a4">
+          <span></span><span></span><span></span><span class="hair"></span><span class="hair"></span><span></span><span></span><span></span>
+          <span></span><span></span><span class="hair"></span><span class="skin"></span><span class="skin"></span><span class="hair"></span><span></span><span></span>
+          <span></span><span></span><span class="skin"></span><span class="eye"></span><span class="eye"></span><span class="skin"></span><span></span><span></span>
+          <span></span><span></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span class="skin"></span><span></span><span></span>
+          <span></span><span></span><span></span><span class="skin"></span><span class="skin"></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="member-name">ZEN</div><div class="member-role">SOUND DEV</div>
+        <div class="member-stats"><span class="stat-chip">ATK 78</span><span class="stat-chip">DEF 96</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIVISOR 05 ═══ -->
+<div class="level-divider"><div class="divider-line"></div><div class="divider-label"><span class="diamond"></span><span class="num">05</span> TESTIMONIOS <span class="diamond"></span></div></div>
+
+<!-- ═══ TESTIMONIOS ═══ -->
+<section class="module module-testimonials" id="testimonials">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number">05</div>
+      <div class="mod-titles"><span class="mod-tag">// RESEÑAS DE JUGADORES</span><h2 class="mod-title">LO QUE DICEN <span class="hl">LOS CLIENTES</span></h2></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review tp-in">
+        <div class="review-head"><div class="review-avatar">M</div><div><div class="review-author">MARTA_DEV</div><div class="review-stars">★★★★★</div></div></div>
+        <p class="review-text">"Entregaron el shader WebGL en tiempo récord. El nivel de detalle en la UI pixel art es brutal."</p>
+        <div class="review-date">2024.11.12</div>
+      </div>
+      <div class="review tp-in" style="transition-delay:.1s">
+        <div class="review-head"><div class="review-avatar">R</div><div><div class="review-author">RUBEN_3D</div><div class="review-stars">★★★★★</div></div></div>
+        <p class="review-text">"Los assets 3D del proyecto superaron el brief. Comunicación impecable todo el sprint."</p>
+        <div class="review-date">2024.09.30</div>
+      </div>
+      <div class="review tp-in" style="transition-delay:.2s">
+        <div class="review-head"><div class="review-avatar">S</div><div><div class="review-author">SOFIA_UX</div><div class="review-stars">★★★★☆</div></div></div>
+        <p class="review-text">"Gran equipo. Cumplieron plazos y el acabado retro encajó perfecto con nuestra marca."</p>
+        <div class="review-date">2024.07.05</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIVISOR 06 ═══ -->
+<div class="level-divider"><div class="divider-line"></div><div class="divider-label"><span class="diamond"></span><span class="num">06</span> PRECIOS <span class="diamond"></span></div></div>
+
+<!-- ═══ PRECIOS ═══ -->
+<section class="module module-pricing" id="pricing">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number">06</div>
+      <div class="mod-titles"><span class="mod-tag">// ELIGE TU CARTUCHO</span><h2 class="mod-title">PACKS DE <span class="hl">PRODUCCIÓN</span></h2></div>
+    </div>
+    <div class="price-grid">
+      <div class="plan tp-in">
+        <div class="plan-name">INDIE</div>
+        <div class="plan-price">1.5K<small>DESDE</small></div>
+        <ul class="plan-features"><li>1 proyecto pequeño</li><li>Landing page o asset 3D</li><li>2 rondas de cambios</li><li>Soporte 30 días</li></ul>
+        <a href="#contact" class="plan-btn">ELEGIR</a>
+      </div>
+      <div class="plan featured tp-in" style="transition-delay:.1s">
+        <div class="plan-name">PRO</div>
+        <div class="plan-price">4.5K<small>DESDE</small></div>
+        <ul class="plan-features"><li>Hasta 3 módulos</li><li>WebGL interactivo + 3D</li><li>Rondas ilimitadas</li><li>Soporte 90 días</li></ul>
+        <a href="#contact" class="plan-btn">ELEGIR</a>
+      </div>
+      <div class="plan tp-in" style="transition-delay:.2s">
+        <div class="plan-name">ENTERPRISE</div>
+        <div class="plan-price">CUSTOM<small>HABLEMOS</small></div>
+        <ul class="plan-features"><li>Proyecto a medida</li><li>Equipo dedicado</li><li>NDA y SLA</li><li>Soporte premium</li></ul>
+        <a href="#contact" class="plan-btn">ELEGIR</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIVISOR 07 ═══ -->
+<div class="level-divider"><div class="divider-line"></div><div class="divider-label"><span class="diamond"></span><span class="num">07</span> CALCULADORA <span class="diamond"></span></div></div>
+
+<!-- ═══ CALCULADORA ═══ -->
+<section class="module module-calculator" id="calculator">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number">07</div>
+      <div class="mod-titles"><span class="mod-tag">// PRESUPUESTO EN TIEMPO REAL</span><h2 class="mod-title">CALCULA TU <span class="hl">PROYECTO</span></h2></div>
+    </div>
+    <div class="calc-wrap tp-in">
+      <div class="calc-row">
+        <div class="calc-label"><span>▸ PÁGINAS / MÓDULOS</span><span class="calc-value" id="valPages">5</span></div>
+        <input type="range" class="calc-slider" id="sliderPages" min="1" max="20" value="5">
+      </div>
+      <div class="calc-row">
+        <div class="calc-label"><span>▸ ASSETS 3D</span><span class="calc-value" id="valAssets">3</span></div>
+        <input type="range" class="calc-slider" id="sliderAssets" min="0" max="20" value="3">
+      </div>
+      <div class="calc-row">
+        <div class="calc-label"><span>▸ SHADERS / EFECTOS</span><span class="calc-value" id="valShaders">2</span></div>
+        <input type="range" class="calc-slider" id="sliderShaders" min="0" max="10" value="2">
+      </div>
+      <div class="calc-row">
+        <div class="calc-label"><span>▸ SEMANAS DE SOPORTE</span><span class="calc-value" id="valSupport">4</span></div>
+        <input type="range" class="calc-slider" id="sliderSupport" min="0" max="52" value="4">
+      </div>
+      <div class="calc-total">
+        <div class="calc-total-label">// PRESUPUESTO ESTIMADO</div>
+        <div class="calc-total-value" id="calcTotal">$4,800</div>
+        <div class="calc-total-note">* Valor orientativo. El brief final ajusta el precio.</div>
+      </div>
+      <a href="#contact" class="calc-cta">ENVIAR ESTE PRESUPUESTO <span class="arrow-css"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIVISOR 08 ═══ -->
+<div class="level-divider"><div class="divider-line"></div><div class="divider-label"><span class="diamond"></span><span class="num">08</span> FAQ <span class="diamond"></span></div></div>
+
+<!-- ═══ FAQ ═══ -->
+<section class="module module-faq" id="faq">
+  <div class="module-inner">
+    <div class="mod-header scan-reveal">
+      <div class="mod-number">08</div>
+      <div class="mod-titles"><span class="mod-tag">// MANUAL DE INSTRUCCIONES</span><h2 class="mod-title">PREGUNTAS <span class="hl">FRECUENTES</span></h2></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item tp-in">
+        <button class="faq-q">¿CUÁNTO TARDA UN PROYECTO? <span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Depende del alcance. Un landing suele estar en 2-3 semanas. Un proyecto WebGL completo con assets 3D puede llevar 2-3 meses.</div></div>
+      </div>
+      <div class="faq-item tp-in" style="transition-delay:.1s">
+        <button class="faq-q">¿TRABAJÁIS CON CLIENTES INTERNACIONALES? <span class="plus">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Sí. Trabajamos 100% en remoto con clientes de Europa y América. Comunicación en inglés y español.</div></div>
+      </div>
+      <div class="faq-item tp-in" style="transition-delay:.2s
